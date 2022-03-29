@@ -74,7 +74,7 @@ class _IntroScreenState extends State<IntroScreen>
                           backgroundColor: Colors.grey[900],
                           child: Container(
                             child: Image.asset(
-                              'lib/images/tictactoelogo.png',
+                              'lib/images/tictactoelogo2.png',
                               color: Colors.white,
                               fit: BoxFit.scaleDown,
                             ),

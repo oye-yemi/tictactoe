@@ -22,20 +22,21 @@ class _HomePageState extends State<HomePage> {
   int filledBoxes = 0;
 
   static var newFont = GoogleFonts.pressStart2p(
-      textStyle: TextStyle(color: Colors.black, letterSpacing: 1));
+      textStyle: TextStyle(color: Colors.white, letterSpacing: 1));
   static var newFontWhite = GoogleFonts.pressStart2p(
       textStyle:
-          TextStyle(color: Colors.black, letterSpacing: 1, fontSize: 12));
+          TextStyle(color: Colors.white, letterSpacing: 1, fontSize: 12));
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[800],
+      backgroundColor: Colors.grey[900],
       body: Column(children: [
         Expanded(
             child: Container(
           child: Center(
               child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.all(20.0),
@@ -172,6 +173,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+//The function below detects when there's a draw and thens the _clearBoard funtion.
   void _showDrawDialog() {
     showDialog(
       context: context,
@@ -191,6 +193,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+//This function shows the winner
   void _showWinDialog(String winner) {
     showDialog(
       context: context,
@@ -208,7 +211,7 @@ class _HomePageState extends State<HomePage> {
         );
       },
     );
-
+    //This if statement checks for the winner and increments the winners score by 1 i.e player x or player o
     if (winner == 'o') {
       scoreforO += 1;
     } else if (winner == 'x') {
@@ -216,6 +219,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+//The function below clears the grid after the winner has been decided so all the grids displays an empty string so players can start a new game
   void _clearBoard() {
     setState(() {
       for (int i = 0; i < 9; i++) {
